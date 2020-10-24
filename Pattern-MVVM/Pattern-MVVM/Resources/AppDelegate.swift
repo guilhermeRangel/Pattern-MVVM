@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Pattern-MVVM
-//
-//  Created by Guilherme Rangel on 24/10/20.
-//
-
 import UIKit
 
 @main
