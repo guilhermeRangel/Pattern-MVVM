@@ -7,16 +7,15 @@
 
 import Foundation
 struct Events : Codable {
-    let people : [People]?
-    
-    let date : Int?
-    let description : String?
-    let image : String?
-    let longitude : Double?
-    let latitude : Double?
-    let price : Double?
-    let title : String?
-    let id : String?
+    var people : [People]?
+    var date : Int?
+    var description : String?
+    var image : String?
+    var longitude : Double?
+    var latitude : Double?
+    var price : Double?
+    var title : String?
+    var id : String?
 
     enum CodingKeys: String, CodingKey {
 

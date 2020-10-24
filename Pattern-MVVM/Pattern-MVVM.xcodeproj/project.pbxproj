@@ -18,6 +18,8 @@
 		77F1816C2544C0F400E765EB /* Pattern_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1816B2544C0F400E765EB /* Pattern_MVVMUITests.swift */; };
 		77F1819D2544C54000E765EB /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1819C2544C54000E765EB /* People.swift */; };
 		77F181A22544C60100E765EB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F181A12544C60100E765EB /* Events.swift */; };
+		77F181A72544C8B700E765EB /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F181A62544C8B700E765EB /* EventService.swift */; };
+		77F181D52544D28600E765EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F181D42544D28600E765EB /* Extensions.swift */; };
 		7F7B3A116753C30D9FE8A276 /* Pods_Pattern_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBDAA47586E4846D29E6061 /* Pods_Pattern_MVVM.framework */; };
 		AB8BFD66C8377DBF339314A5 /* Pods_Pattern_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A52CF781BD84DBAB8F7D /* Pods_Pattern_MVVMTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		77F1816D2544C0F400E765EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F1819C2544C54000E765EB /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		77F181A12544C60100E765EB /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		77F181A62544C8B700E765EB /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		77F181D42544D28600E765EB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		946C39C6E7ABEB5B477A4090 /* Pods-Pattern-MVVM-Pattern-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pattern-MVVM-Pattern-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-Pattern-MVVM-Pattern-MVVMUITests/Pods-Pattern-MVVM-Pattern-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F90FCBC1EFEE20D5C9AFE82 /* Pods-Pattern-MVVM-Pattern-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pattern-MVVM-Pattern-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pattern-MVVM-Pattern-MVVMUITests/Pods-Pattern-MVVM-Pattern-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0B6F1BFAEC234E5EDF8B237 /* Pods-Pattern-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pattern-MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Pattern-MVVM/Pods-Pattern-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,10 +134,10 @@
 		77F181482544C0F300E765EB /* Pattern-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				77F181982544C37A00E765EB /* Network */,
 				77F181972544C35900E765EB /* App */,
 				77F181902544C28100E765EB /* Model */,
 				77F181922544C29A00E765EB /* Coordinator */,
+				77F181982544C37A00E765EB /* Network */,
 				77F181932544C2B000E765EB /* Resources */,
 				77F181912544C28E00E765EB /* Utils */,
 				77F1814B2544C0F300E765EB /* SceneDelegate.swift */,
@@ -172,6 +176,7 @@
 		77F181912544C28E00E765EB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				77F181D42544D28600E765EB /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 		77F181982544C37A00E765EB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				77F181A62544C8B700E765EB /* EventService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -460,11 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F181A72544C8B700E765EB /* EventService.swift in Sources */,
 				77F181A22544C60100E765EB /* Events.swift in Sources */,
 				77F1819D2544C54000E765EB /* People.swift in Sources */,
 				77F1814E2544C0F300E765EB /* ViewController.swift in Sources */,
 				77F1814A2544C0F300E765EB /* AppDelegate.swift in Sources */,
 				77F1814C2544C0F300E765EB /* SceneDelegate.swift in Sources */,
+				77F181D52544D28600E765EB /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
