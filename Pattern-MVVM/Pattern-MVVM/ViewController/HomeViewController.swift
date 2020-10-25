@@ -67,7 +67,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if let result = self.viewModel.modelHomeEvents.result {
             cell.title.text = result[indexPath.row]?.title
             
-            if let url = URL(string: result[indexPath.row]?.image ?? "sicredi"){
+            if let url = URL(string: result[indexPath.row]?.image ?? ""){
                 cell.imageCell.kf.setImage(with: url)
             }
             if let dateEvent = result[indexPath.row]?.date{
@@ -82,7 +82,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.goToDetails()
+        coordinator?.goToDetails(viewModel: viewModel)
     }
 }
 

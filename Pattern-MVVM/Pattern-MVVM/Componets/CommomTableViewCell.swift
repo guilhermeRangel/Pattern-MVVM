@@ -14,7 +14,7 @@ class CommomTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-     
+        viewCalendar.layer.cornerRadius = 13
         
     }
 
@@ -22,6 +22,7 @@ class CommomTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBOutlet weak var viewCalendar: UIView!
     func setDate(_ date: Int){
         let milisecond = date
         let dateVar = Date.init(timeIntervalSinceNow: TimeInterval(milisecond)/1000)

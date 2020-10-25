@@ -192,9 +192,9 @@
 		77F181482544C0F300E765EB /* Pattern-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				77B52EEF2544E8E400284E90 /* ViewController */,
 				77B52F4A254617F000284E90 /* View */,
 				77B52F352545FE1200284E90 /* Componets */,
-				77B52EEF2544E8E400284E90 /* ViewController */,
 				77F181902544C28100E765EB /* Model */,
 				77F181982544C37A00E765EB /* Network */,
 				77F181922544C29A00E765EB /* Coordinator */,

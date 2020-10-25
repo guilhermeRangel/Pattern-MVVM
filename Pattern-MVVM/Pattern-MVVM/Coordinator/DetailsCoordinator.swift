@@ -28,9 +28,10 @@ class DetailsCoordinator: Coordinator {
         navigationController.pushViewController(vcDetails, animated: true)
     }
     
-    func goToDetails() {
+    func goToDetails(viewModel: HomeViewModel) {
         let vc = DetailsViewController.instantiate(Constants.Storyboard.detailsSB, id: Constants.Id.detailsId)
         vc.coordinator = parentCoordinator
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
     
