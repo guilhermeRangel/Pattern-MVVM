@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 import Kingfisher
 class HomeViewController: UIViewController, Storyboarded {
-    let height = UIScreen.main.bounds.height
-    let width = UIScreen.main.bounds.width
+    let heightScreen = UIScreen.main.bounds.height
+    let widthScreen = UIScreen.main.bounds.width
+    
     weak var coordinator: MainCoordinator?
     var viewModel = HomeViewModel()
     
@@ -18,20 +19,25 @@ class HomeViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.homeService.homeServiceDelegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.backgroundColor = .red
+        
+        enableDelegates()
+        
         let nib = UINib(nibName: CommomTableViewCell.name, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: CommomTableViewCell.name)
         
     }
     
+    func enableDelegates(){
+        viewModel.homeService.homeServiceDelegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "Eventos"
+        navigationItem.title = "Eventos"
         navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
         
         viewModel.fetch()
@@ -44,7 +50,7 @@ class HomeViewController: UIViewController, Storyboarded {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        height / 3
+        heightScreen / 3
     }
     
     
@@ -61,20 +67,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if let result = self.viewModel.modelHomeEvents.result {
             cell.title.text = result[indexPath.row]?.title
             
-            if let url = URL(string: (result[indexPath.row]?.image)!){
+            if let url = URL(string: result[indexPath.row]?.image ?? "sicredi"){
                 cell.imageCell.kf.setImage(with: url)
-            }else{
-                print("entrei")
             }
+            if let dateEvent = result[indexPath.row]?.date{
+               cell.setDate(dateEvent)
+            }
+             
         }
-          
-       
+        
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row)")
+        coordinator?.goToDetails()
     }
 }
 

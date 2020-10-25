@@ -143,10 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				77B52EF02544E8FA00284E90 /* HomeViewController.swift */,
-				77B52EF52544E94D00284E90 /* Home.storyboard */,
 				77B52EFA2544E98C00284E90 /* DetailsViewController.swift */,
 				77B52F04254503D800284E90 /* HomeViewModel.swift */,
-				77B52EFF2544E9AB00284E90 /* Details.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -158,6 +156,15 @@
 				77B52F372545FE2800284E90 /* CommomTableViewCell.xib */,
 			);
 			path = Componets;
+			sourceTree = "<group>";
+		};
+		77B52F4A254617F000284E90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77B52EFF2544E9AB00284E90 /* Details.storyboard */,
+				77B52EF52544E94D00284E90 /* Home.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		77F1813D2544C0F300E765EB = {
@@ -185,6 +192,7 @@
 		77F181482544C0F300E765EB /* Pattern-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				77B52F4A254617F000284E90 /* View */,
 				77B52F352545FE1200284E90 /* Componets */,
 				77B52EEF2544E8E400284E90 /* ViewController */,
 				77F181902544C28100E765EB /* Model */,

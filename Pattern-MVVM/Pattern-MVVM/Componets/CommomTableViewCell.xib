@@ -27,8 +27,15 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ann-lp-P2c">
+                        <rect key="frame" x="330" y="227" width="57" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISn-zW-o3g">
-                        <rect key="frame" x="27" y="227" width="360" height="60"/>
+                        <rect key="frame" x="27" y="227" width="295" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" name="DefaultElementeCell"/>
                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
@@ -40,6 +47,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="eventDate" destination="Ann-lp-P2c" id="Y7m-uk-6L7"/>
                 <outlet property="imageCell" destination="3Qi-rm-FFd" id="sID-GT-zfu"/>
                 <outlet property="title" destination="ISn-zW-o3g" id="4bC-Md-cp0"/>
             </connections>
