@@ -9,22 +9,20 @@ import Foundation
 import UIKit
 import Kingfisher
 class HomeViewController: UIViewController, Storyboarded {
-    let heightScreen = UIScreen.main.bounds.height
-    let widthScreen = UIScreen.main.bounds.width
+    @IBOutlet weak var tableView: UITableView!
     
     weak var coordinator: MainCoordinator?
     var viewModel = HomeViewModel()
     
-    @IBOutlet weak var tableView: UITableView!
+    let heightScreen = UIScreen.main.bounds.height
+    let widthScreen = UIScreen.main.bounds.width
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         enableDelegates()
         
         let nib = UINib(nibName: CommomTableViewCell.name, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: CommomTableViewCell.name)
-        
     }
     
     func enableDelegates(){
@@ -39,8 +37,7 @@ class HomeViewController: UIViewController, Storyboarded {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
-        
-        viewModel.fetch()
+            viewModel.fetch()
     }
     
 }
@@ -82,7 +79,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.goToDetails(viewModel: viewModel)
+        coordinator?.goToDetails(viewModel: viewModel, id: indexPath.row)
     }
 }
 

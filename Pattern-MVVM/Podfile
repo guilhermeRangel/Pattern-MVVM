@@ -8,6 +8,7 @@ target 'Pattern-MVVM' do
   # Pods for Pattern-MVVM
     pod 'Alamofire', '~> 4.9.1'
     pod 'Kingfisher', '~> 5.15.0'
+    pod 'SwiftLint', '~> 0.40.0'
 
   target 'Pattern-MVVMTests' do
     inherit! :search_paths
