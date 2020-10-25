@@ -24,7 +24,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VpA-Vk-Pdg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1786282659" green="0.66506236789999995" blue="0.18515387180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nK9-81-U4S" id="ckB-qb-V4y"/>

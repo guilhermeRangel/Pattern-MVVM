@@ -21,7 +21,7 @@ class HomeViewController: UIViewController, Storyboarded {
         viewModel.homeService.homeServiceDelegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        
+        view.backgroundColor = .red
         let nib = UINib(nibName: CommomTableViewCell.name, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: CommomTableViewCell.name)
         
@@ -29,6 +29,11 @@ class HomeViewController: UIViewController, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.title = "Eventos"
+        navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
+        
         viewModel.fetch()
     }
     
@@ -56,8 +61,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if let result = self.viewModel.modelHomeEvents.result {
             cell.title.text = result[indexPath.row]?.title
             
-            if let url = URL(string: result[indexPath.row]?.image ?? ""){
+            if let url = URL(string: (result[indexPath.row]?.image)!){
                 cell.imageCell.kf.setImage(with: url)
+            }else{
+                print("entrei")
             }
         }
           
@@ -66,7 +73,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row)")
     }
 }
