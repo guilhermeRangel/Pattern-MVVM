@@ -13,6 +13,6 @@ struct HomeViewModel {
     var modelHome = Events()
     
     func fetch(){
-        homeService.fetch()
+        homeService.fetchAllEvents()
     }
 }

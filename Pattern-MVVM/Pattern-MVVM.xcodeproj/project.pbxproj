@@ -15,6 +15,8 @@
 		77B52F002544E9AB00284E90 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B52EFF2544E9AB00284E90 /* Details.storyboard */; };
 		77B52F05254503D800284E90 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B52F04254503D800284E90 /* HomeViewModel.swift */; };
 		77B52F0D2545053400284E90 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B52F0C2545053400284E90 /* HomeService.swift */; };
+		77B52F382545FE2800284E90 /* CommomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B52F362545FE2800284E90 /* CommomTableViewCell.swift */; };
+		77B52F392545FE2800284E90 /* CommomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B52F372545FE2800284E90 /* CommomTableViewCell.xib */; };
 		77F1814A2544C0F300E765EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F181492544C0F300E765EB /* AppDelegate.swift */; };
 		77F1814C2544C0F300E765EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1814B2544C0F300E765EB /* SceneDelegate.swift */; };
 		77F181532544C0F400E765EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F181522544C0F400E765EB /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		77B52EFF2544E9AB00284E90 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		77B52F04254503D800284E90 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77B52F0C2545053400284E90 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		77B52F362545FE2800284E90 /* CommomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommomTableViewCell.swift; sourceTree = "<group>"; };
+		77B52F372545FE2800284E90 /* CommomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommomTableViewCell.xib; sourceTree = "<group>"; };
 		77F181462544C0F300E765EB /* Pattern-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pattern-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F181492544C0F300E765EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F1814B2544C0F300E765EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,9 +147,11 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		77B52F262545320D00284E90 /* Componets */ = {
+		77B52F352545FE1200284E90 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				77B52F362545FE2800284E90 /* CommomTableViewCell.swift */,
+				77B52F372545FE2800284E90 /* CommomTableViewCell.xib */,
 			);
 			path = Componets;
 			sourceTree = "<group>";
@@ -175,7 +181,7 @@
 		77F181482544C0F300E765EB /* Pattern-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				77B52F262545320D00284E90 /* Componets */,
+				77B52F352545FE1200284E90 /* Componets */,
 				77B52EEF2544E8E400284E90 /* ViewController */,
 				77F181902544C28100E765EB /* Model */,
 				77F181982544C37A00E765EB /* Network */,
@@ -377,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B52F392545FE2800284E90 /* CommomTableViewCell.xib in Resources */,
 				77B52EF62544E94D00284E90 /* Home.storyboard in Resources */,
 				77F181562544C0F400E765EB /* LaunchScreen.storyboard in Resources */,
 				77F181532544C0F400E765EB /* Assets.xcassets in Resources */,
@@ -511,6 +518,7 @@
 				77F181A72544C8B700E765EB /* EventService.swift in Sources */,
 				77F181DD2544D59500E765EB /* MainCoordinator.swift in Sources */,
 				77F181A22544C60100E765EB /* Events.swift in Sources */,
+				77B52F382545FE2800284E90 /* CommomTableViewCell.swift in Sources */,
 				77F1819D2544C54000E765EB /* People.swift in Sources */,
 				775C4A192544DBC7005347BB /* DetailsCoordinator.swift in Sources */,
 				77B52EF12544E8FB00284E90 /* HomeViewController.swift in Sources */,

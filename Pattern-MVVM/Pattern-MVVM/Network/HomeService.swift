@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HomeServiceProtocol: class {
-    func fetch()
+    func fetchAllEvents()
 }
 
 protocol HomeServiceDelegate {
@@ -18,17 +18,13 @@ protocol HomeServiceDelegate {
 class HomeService: HomeServiceProtocol {
     var homeServiceDelegate: HomeServiceDelegate?
     
-    func fetch(){
-        
+    func fetchAllEvents(){
         EventService<[Events]>.allEvents.request { result in
             switch result {
-            
             case let .success(result):
-                
-                
-                self.homeServiceDelegate?.onHomeFetched(result)
-                
-                
+                DispatchQueue.main.async{
+                    self.homeServiceDelegate?.onHomeFetched(result)
+                }
                 
             case .failure:
                 print("erro")
@@ -38,7 +34,6 @@ class HomeService: HomeServiceProtocol {
     }
     
     let homeService: EventService<[Events]>
-    
     init(homeService: EventService<[Events]> = .allEvents) {
         self.homeService = homeService
     }

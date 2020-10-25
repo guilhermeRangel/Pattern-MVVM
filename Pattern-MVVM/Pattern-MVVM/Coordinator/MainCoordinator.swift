@@ -22,6 +22,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         let child = HomeCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
+        
         child.start()
     }
     
