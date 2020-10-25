@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location services will allow us to attach your location to the map, and to enhance search and currency activities.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location services will allow us to attach your location to the map, and to enhance search and currency activities.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

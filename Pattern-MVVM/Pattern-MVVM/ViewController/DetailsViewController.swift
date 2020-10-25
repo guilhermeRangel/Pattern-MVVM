@@ -18,10 +18,11 @@ class DetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var mapKit: MKMapView!
    
     weak var coordinator: MainCoordinator?
-    
+    var alerts = Alerts()
     var viewModel:HomeViewModel?
     var id:Int?
-    
+    var latitudeDestino: Double?
+    var longitudeDestino: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,8 @@ class DetailsViewController: UIViewController, Storyboarded {
             price.text = "Preço\n\(event.price?.description ?? "0")"
             
             if let latitude = event.latitude, let longitude = event.longitude {
+                latitudeDestino = latitude
+                longitudeDestino = longitude
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 
@@ -63,6 +66,8 @@ class DetailsViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func btnNavigationNow(_ sender: UIButton) {
+       
+        
         
     }
     
