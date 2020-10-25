@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.backgroundColor = .blue
         
     }

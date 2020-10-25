@@ -78,6 +78,7 @@ extension EventService: GenericServiceProtocol {
     
     @discardableResult
     func request(params: [String: Any]? = nil, completion: @escaping ((ResponseResult<T>) -> Void)) -> DataRequest {
+      
         return Alamofire.request(url,
                                  method: method,
                                  parameters: params,
