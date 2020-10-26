@@ -23,7 +23,6 @@ class DetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var check2: UIImageView!
     @IBOutlet weak var check3: UIImageView!
     @IBOutlet weak var check4: UIImageView!
-    @IBOutlet weak var checkAll: UIImageView!
     
     @IBOutlet weak var peoplesCount: UILabel!
     weak var coordinator: MainCoordinator?
@@ -49,8 +48,8 @@ class DetailsViewController: UIViewController, Storyboarded {
         check2.isHidden = true
         check3.isHidden = true
         check4.isHidden = true
-        checkAll.isHidden = true
-        
+        peoplesCount.isHidden = true
+        viewParticipants.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,17 +75,24 @@ class DetailsViewController: UIViewController, Storyboarded {
                 
                 let region = centerMapOnLocation(CLLocation(latitude: latitude, longitude: longitude))
                 if event.people!.count > 0{
-                    guard let p0 = event.people?[0].picture else {return}
-                    guard let p1 = event.people?[1].picture else {return}
-                    guard let p2 = event.people?[2].picture else {return}
-                    guard let p3 = event.people?[3].picture else {return}
-                    check1.kf.setImage(with: URL(string: p0))
-                    check2.kf.setImage(with: URL(string: p1))
-                    check3.kf.setImage(with: URL(string: p2))
-                    check4.kf.setImage(with: URL(string: p3))
+                    if let p0 = event.people?[0].picture {
+                        check1.kf.setImage(with: URL(string: p0))
+                    }
+                    if let p1 = event.people?[1].picture{
+                        check2.kf.setImage(with: URL(string: p1))
+                    }
+                    if let p2 = event.people?[2].picture{
+                        check3.kf.setImage(with: URL(string: p2))
+                    }
+                    if let p3 = event.people?[3].picture{
+                        check4.kf.setImage(with: URL(string: p3))
+                    }
+
                     if let count = event.people?.count.description{
                         peoplesCount.text = "+\(count)"
                     }
+                }else{
+                    showPeoplesChecked()
                 }
                
                 mapKit.addAnnotation(annotation)
@@ -104,7 +110,6 @@ class DetailsViewController: UIViewController, Storyboarded {
             present(result, animated: true) {
                 self.checkInViewModel.checkInEvent(eventId: id.description, name: UIDevice.current.name, email: "guilherme.rangel@icoud.com")
             }
-            
         }
     }
     
@@ -123,12 +128,8 @@ extension DetailsViewController: DetailsServiceDelegate{
                 peoplesCount.text = "+\(1+count)"
                 flagCheckIn = true
             }
-           
-            
         }
     }
-    
-    
 }
 
 extension DetailsViewController{
@@ -148,7 +149,6 @@ extension DetailsViewController{
     
     
     @objc func shareItemTapped(_ sender:UIBarButtonItem!){
-       
         let vc = UIActivityViewController(activityItems: ["\(self.idEventy ?? 0)-\(self.titleDetails.text ?? "evento sicredi")"], applicationActivities: [])
         self.present(vc, animated: true)
        

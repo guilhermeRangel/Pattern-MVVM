@@ -11,178 +11,6 @@
     </dependencies>
     <scenes>
         <!--Details View Controller-->
-        <scene sceneID="Df8-lh-MTX">
-            <objects>
-                <viewController storyboardIdentifier="Details2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nbt-Ll-MS5" customClass="DetailsViewController" customModule="Pattern_MVVM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3xO-0S-sge">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nr6-L5-g0d">
-                                <rect key="frame" x="0.0" y="44" width="414" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TV-ky-dnc">
-                                <rect key="frame" x="0.0" y="249" width="414" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="DefaultElementeCell"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
-                                <color key="textColor" name="DefaultElementsColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lBY-xO-rtE">
-                                <rect key="frame" x="0.0" y="304" width="414" height="198"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="DefaultElementeCell"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                <color key="textColor" name="DefaultElementsColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvO-3H-0Rj">
-                                <rect key="frame" x="0.0" y="502" width="414" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="DefaultBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
-                                <state key="normal" title="Garantir Entrada">
-                                    <color key="titleColor" name="DefaultElementsColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnCheckIn:" destination="Nbt-Ll-MS5" eventType="touchUpInside" id="1Ga-LS-kxq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02C-dm-IfQ">
-                                <rect key="frame" x="0.0" y="642" width="414" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="DefaultBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
-                                <state key="normal" title="Ir até local do evento">
-                                    <color key="titleColor" name="DefaultElementsColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnNavigationNow:" destination="Nbt-Ll-MS5" eventType="touchUpInside" id="8JP-b7-ZKY"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZH-8h-OWt">
-                                <rect key="frame" x="339" y="60" width="67" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o26-sa-904">
-                                        <rect key="frame" x="16.5" y="26" width="34" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="12"/>
-                                        <color key="textColor" name="DefaultElementsColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="DefaultBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5j-ci-3XK">
-                                <rect key="frame" x="8" y="175" width="160" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Participantes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-iT-Htg">
-                                        <rect key="frame" x="31.5" y="52.5" width="97" height="18.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="15"/>
-                                        <color key="textColor" name="DefaultElementsColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-7d-lpO">
-                                        <rect key="frame" x="8" y="17" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="LgK-xw-69Q">
-                                        <rect key="frame" x="31" y="17" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-DN-lD0">
-                                        <rect key="frame" x="56" y="17" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="RVG-Xi-Pnh">
-                                        <rect key="frame" x="76" y="17" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G25-vT-HMC">
-                                        <rect key="frame" x="110" y="17" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="DefaultBackgroundColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8y2-oC-DIX">
-                                        <rect key="frame" x="113.5" y="18" width="33" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
-                                        <color key="textColor" name="DefaultElementsColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="DefaultBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kO7-TE-ybA">
-                                <rect key="frame" x="0.0" y="491" width="414" height="151"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="f1v-Sa-hDW"/>
-                        <color key="backgroundColor" name="BackgroundCard"/>
-                    </view>
-                    <connections>
-                        <outlet property="bodyDetails" destination="lBY-xO-rtE" id="pH6-k0-1iB"/>
-                        <outlet property="btnCheckIn" destination="zvO-3H-0Rj" id="P9M-cS-SDC"/>
-                        <outlet property="btnNavigationNow" destination="02C-dm-IfQ" id="3Lg-Wl-Lvt"/>
-                        <outlet property="check1" destination="wo4-7d-lpO" id="6DN-uY-NYK"/>
-                        <outlet property="check2" destination="LgK-xw-69Q" id="z3c-wI-bHi"/>
-                        <outlet property="check3" destination="lCe-DN-lD0" id="nT0-pS-44i"/>
-                        <outlet property="check4" destination="RVG-Xi-Pnh" id="2cY-iI-wsu"/>
-                        <outlet property="checkAll" destination="G25-vT-HMC" id="oXk-eJ-WV7"/>
-                        <outlet property="imgDetails" destination="Nr6-L5-g0d" id="0lt-Ij-PvJ"/>
-                        <outlet property="mapKit" destination="kO7-TE-ybA" id="Zsf-DR-Ag4"/>
-                        <outlet property="peoplesCount" destination="8y2-oC-DIX" id="f0r-gP-9OT"/>
-                        <outlet property="price" destination="o26-sa-904" id="qgo-aY-IZ4"/>
-                        <outlet property="titleDetails" destination="1TV-ky-dnc" id="DRy-f7-fLh"/>
-                        <outlet property="viewParticipants" destination="m5j-ci-3XK" id="XNF-I4-P43"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zDd-SG-dbZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-13.043478260869566" y="71.651785714285708"/>
-        </scene>
-        <!--Details View Controller-->
         <scene sceneID="a0l-vy-6Nh">
             <objects>
                 <viewController storyboardIdentifier="Details" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cOB-Fv-cgw" customClass="DetailsViewController" customModule="Pattern_MVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -320,7 +148,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
                                                     <color key="titleColor" name="DefaultElementsColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="btnCheckIn:" destination="Nbt-Ll-MS5" eventType="touchUpInside" id="XXF-M6-NK7"/>
+                                                    <action selector="btnCheckIn:" destination="cOB-Fv-cgw" eventType="touchUpInside" id="ZQD-fV-U7o"/>
                                                 </connections>
                                             </button>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NwJ-Xp-pFC">
@@ -337,7 +165,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
                                                     <color key="titleColor" name="DefaultElementsColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="btnNavigationNow:" destination="Nbt-Ll-MS5" eventType="touchUpInside" id="atE-gL-KQp"/>
+                                                    <action selector="btnNavigationNow:" destination="cOB-Fv-cgw" eventType="touchUpInside" id="lk8-bg-Zd8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -390,6 +218,21 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="bodyDetails" destination="rwQ-l8-tqd" id="oM5-Oc-W24"/>
+                        <outlet property="btnCheckIn" destination="a8w-vk-CAC" id="z11-jx-fy5"/>
+                        <outlet property="btnNavigationNow" destination="zmz-9U-kF7" id="FSQ-bg-402"/>
+                        <outlet property="check1" destination="Gwa-ng-6gC" id="R7u-CH-wfT"/>
+                        <outlet property="check2" destination="bOd-cc-djp" id="RKr-wg-9OW"/>
+                        <outlet property="check3" destination="8Xb-Hb-773" id="UUp-8P-2mG"/>
+                        <outlet property="check4" destination="ZDg-L9-AgO" id="eGK-zd-aiW"/>
+                        <outlet property="imgDetails" destination="ZbZ-Mr-hhy" id="Pw1-pR-gwi"/>
+                        <outlet property="mapKit" destination="NwJ-Xp-pFC" id="nfN-ju-g6Q"/>
+                        <outlet property="peoplesCount" destination="64a-Hl-uKl" id="GpR-xu-C4G"/>
+                        <outlet property="price" destination="sue-TJ-WwE" id="Oq3-gK-Nvd"/>
+                        <outlet property="titleDetails" destination="zei-Ge-7i9" id="no7-ct-Oj5"/>
+                        <outlet property="viewParticipants" destination="7HS-WO-pvT" id="pzn-ME-KkZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc5-Fk-fyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -399,14 +242,8 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
     <resources>
         <image name="loading" width="112.5" height="112.5"/>
         <image name="woopSicredi" width="1200" height="635"/>
-        <namedColor name="BackgroundCard">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="DefaultBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="DefaultElementeCell">
-            <color red="0.89999997615814209" green="0.9179999828338623" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DefaultElementsColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

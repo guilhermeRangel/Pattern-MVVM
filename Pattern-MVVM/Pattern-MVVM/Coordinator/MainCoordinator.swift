@@ -39,11 +39,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         child.goToDetails(viewModel: viewModel, id: id)
     }
     
-    func goToDetails2() {
-        let sb = UIStoryboard(name: "Details", bundle: .main)
-        let vc = sb.instantiateViewController(identifier: "Details")
-        navigationController.pushViewController(vc, animated: true)
-    }
+
     
     
     

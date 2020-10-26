@@ -94,8 +94,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        coordinator?.goToDetails(viewModel: viewModel, id: indexPath.row)
-        coordinator?.goToDetails2()
+        coordinator?.goToDetails(viewModel: viewModel, id: indexPath.row)
+
     }
 }
 
