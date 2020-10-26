@@ -17,6 +17,7 @@ class DetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var btnCheckIn: UIButton!
     @IBOutlet weak var mapKit: MKMapView!
     
+    @IBOutlet weak var viewParticipants: UIView!
     
     @IBOutlet weak var check1: UIImageView!
     @IBOutlet weak var check2: UIImageView!
@@ -41,12 +42,16 @@ class DetailsViewController: UIViewController, Storyboarded {
         checkInViewModel.checkInService.detailsServiceDelegate = self
         guard let index = idEventy else {return}
         setupView(index: index)
-        
-        
-       
+  
+    }
+    func showPeoplesChecked(){
+        check1.isHidden = true
+        check2.isHidden = true
+        check3.isHidden = true
+        check4.isHidden = true
+        checkAll.isHidden = true
         
     }
-   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -70,14 +75,20 @@ class DetailsViewController: UIViewController, Storyboarded {
                 annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 
                 let region = centerMapOnLocation(CLLocation(latitude: latitude, longitude: longitude))
-                
-                check1.kf.setImage(with: URL(string: event.people?[0].picture ?? ""))
-                check2.kf.setImage(with: URL(string: event.people?[1].picture ?? ""))
-                check3.kf.setImage(with: URL(string: event.people?[2].picture ?? ""))
-                check4.kf.setImage(with: URL(string: event.people?[3].picture ?? ""))
-                if let count = event.people?.count.description{
-                    peoplesCount.text = "+\(count)"
+                if event.people!.count > 0{
+                    guard let p0 = event.people?[0].picture else {return}
+                    guard let p1 = event.people?[1].picture else {return}
+                    guard let p2 = event.people?[2].picture else {return}
+                    guard let p3 = event.people?[3].picture else {return}
+                    check1.kf.setImage(with: URL(string: p0))
+                    check2.kf.setImage(with: URL(string: p1))
+                    check3.kf.setImage(with: URL(string: p2))
+                    check4.kf.setImage(with: URL(string: p3))
+                    if let count = event.people?.count.description{
+                        peoplesCount.text = "+\(count)"
+                    }
                 }
+               
                 mapKit.addAnnotation(annotation)
                 mapKit.setRegion(region, animated: true)
             }

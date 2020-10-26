@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -35,9 +36,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yx6-to-1Za">
-                        <rect key="frame" x="323" y="26" width="52" height="54"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yx6-to-1Za">
+                        <rect key="frame" x="322.5" y="25" width="52" height="54"/>
                         <color key="backgroundColor" name="DefaultBackgroundColor"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendrio" translatesAutoresizingMaskIntoConstraints="NO" id="pxX-wD-w5v">
@@ -56,10 +56,14 @@
                 </subviews>
                 <color key="backgroundColor" name="DefaultElementeCell"/>
                 <constraints>
+                    <constraint firstItem="yx6-to-1Za" firstAttribute="width" secondItem="pxX-wD-w5v" secondAttribute="width" multiplier="0.912281" id="1vN-7V-Ete"/>
+                    <constraint firstItem="yx6-to-1Za" firstAttribute="centerX" secondItem="pxX-wD-w5v" secondAttribute="centerX" id="3Ow-nT-bMz"/>
                     <constraint firstAttribute="trailing" secondItem="3Qi-rm-FFd" secondAttribute="trailing" constant="27" id="OCM-0R-LbQ"/>
+                    <constraint firstItem="yx6-to-1Za" firstAttribute="centerY" secondItem="pxX-wD-w5v" secondAttribute="centerY" id="S1g-z6-lDQ"/>
                     <constraint firstItem="ISn-zW-o3g" firstAttribute="top" secondItem="3Qi-rm-FFd" secondAttribute="bottom" id="TPZ-bZ-MoS"/>
                     <constraint firstItem="3Qi-rm-FFd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="bH9-k0-lGS"/>
                     <constraint firstItem="Ann-lp-P2c" firstAttribute="centerY" secondItem="pxX-wD-w5v" secondAttribute="centerY" id="dU3-TA-siJ"/>
+                    <constraint firstItem="yx6-to-1Za" firstAttribute="height" secondItem="pxX-wD-w5v" secondAttribute="height" multiplier="0.9" id="fbz-Xb-yMr"/>
                     <constraint firstAttribute="trailing" secondItem="ISn-zW-o3g" secondAttribute="trailing" constant="27" id="mNB-QQ-QKN"/>
                     <constraint firstItem="3Qi-rm-FFd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="nl1-cM-fSf"/>
                     <constraint firstAttribute="trailing" secondItem="pxX-wD-w5v" secondAttribute="trailing" constant="37" id="scP-K2-BWj"/>

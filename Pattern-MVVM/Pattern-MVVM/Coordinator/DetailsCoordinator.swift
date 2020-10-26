@@ -36,6 +36,12 @@ class DetailsCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func goToDetails2() {
+        let sb = UIStoryboard(name: "Details", bundle: .main)
+        let vc = sb.instantiateViewController(identifier: "Details")
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     
     func didFinish() {
         //parentCoordinator?.childDidFinish(self)
