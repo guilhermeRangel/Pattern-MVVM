@@ -13,7 +13,6 @@ struct Constants {
     struct Storyboard {
         static let homeSB = "Home"
         static let detailsSB = "Details"
-   
     }
     
     struct Id {

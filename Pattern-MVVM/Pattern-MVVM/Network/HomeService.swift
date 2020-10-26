@@ -27,7 +27,6 @@ class HomeService: HomeServiceProtocol {
                 }
                 
             case .failure:
-                print("erro")
                 break
             }
         }

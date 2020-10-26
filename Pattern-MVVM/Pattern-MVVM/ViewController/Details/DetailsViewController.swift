@@ -42,17 +42,7 @@ class DetailsViewController: UIViewController, Storyboarded {
         checkInViewModel.checkInService.detailsServiceDelegate = self
         guard let index = idEventy else {return}
         setupView(index: index)
-        
-        
-        btnCheckIn.layer.masksToBounds = true
-        btnCheckIn.setRadiusWithShadow()
-        btnCheckIn.backgroundColor = ColorSystem.backgroundCard
-        
-        
-        btnNavigationNow.layer.masksToBounds = true
-        btnNavigationNow.setRadiusWithShadow()
-        btnNavigationNow.backgroundColor = ColorSystem.backgroundCard
-        
+        customizeButtons()
     }
     
     
@@ -65,7 +55,11 @@ class DetailsViewController: UIViewController, Storyboarded {
         if let event = viewModel?.modelHomeEvents.result?[index]{
             titleDetails.text = event.title
             bodyDetails.text = event.description
+            
+            
             imgDetails.kf.setImage(with: URL(string: event.image ?? ""))
+            
+            
             price.text = "Preço\n\(event.price?.description ?? "0")".localized
             
             if let latitude = event.latitude, let longitude = event.longitude {
@@ -143,6 +137,15 @@ extension DetailsViewController: DetailsServiceDelegate{
 
 extension DetailsViewController{
     
+    private func setImage(for imageView: UIImageView, with url: URL, placeholder: UIImage) {
+        
+        imageView.kf.setImage(with: url,
+                              placeholder: placeholder,
+                              options: [.transition(.fade(1))],
+                              progressBlock: {receivedSize, totalSize in},
+                              completionHandler: {result in})
+    }
+    
     func customizeNavigation(){
         let rightBarButton = UIBarButtonItem(title: "Compartilhar".localized, style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.shareItemTapped(_:)))
         self.navigationItem.rightBarButtonItem = rightBarButton
@@ -153,6 +156,17 @@ extension DetailsViewController{
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
         self.navigationController?.navigationBar.tintColor = ColorSystem.defaultElementsColor
+    }
+    
+    func customizeButtons(){
+        btnCheckIn.layer.masksToBounds = true
+        btnCheckIn.setRadiusWithShadow()
+        btnCheckIn.backgroundColor = ColorSystem.backgroundCard
+        
+        
+        btnNavigationNow.layer.masksToBounds = true
+        btnNavigationNow.setRadiusWithShadow()
+        btnNavigationNow.backgroundColor = ColorSystem.backgroundCard
     }
     
     func showAndHidePeoplesChecked(option: Bool){

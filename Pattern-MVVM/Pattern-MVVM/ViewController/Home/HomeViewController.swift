@@ -52,13 +52,10 @@ class HomeViewController: UIViewController, Storyboarded {
                     self.viewModel.fetch()
                     self.tableView.reloadData()
                     self.repeats = true
-
                 }
             })
-            
         }
     }
-    
 }
 
 

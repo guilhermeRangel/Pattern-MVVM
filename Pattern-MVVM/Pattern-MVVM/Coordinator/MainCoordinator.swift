@@ -38,11 +38,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         child.parentCoordinator = self
         child.goToDetails(viewModel: viewModel, id: id)
     }
-    
 
-    
-    
-    
     
     // MARK: - Global Coordinator
     func childDidFinish(_ child: Coordinator?) {

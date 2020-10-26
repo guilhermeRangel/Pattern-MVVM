@@ -153,13 +153,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		77B52EEF2544E8E400284E90 /* ViewController */ = {
+		77032F5C2547742D001215E0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				77B52EF02544E8FA00284E90 /* HomeViewController.swift */,
 				77B52F04254503D800284E90 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77032F5D2547743A001215E0 /* Details */ = {
+			isa = PBXGroup;
+			children = (
 				77B52EFA2544E98C00284E90 /* DetailsViewController.swift */,
 				77032F4B2546672A001215E0 /* DetailsViewModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		77B52EEF2544E8E400284E90 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77032F5C2547742D001215E0 /* Home */,
+				77032F5D2547743A001215E0 /* Details */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

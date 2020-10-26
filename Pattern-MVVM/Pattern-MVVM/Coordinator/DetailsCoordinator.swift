@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 class DetailsCoordinator: Coordinator {
-  
-    
-    
+
     weak var parentCoordinator: MainCoordinator?
     
     var childCoordinators = [Coordinator]()
@@ -35,9 +33,7 @@ class DetailsCoordinator: Coordinator {
         vc.idEventy = id
         navigationController.pushViewController(vc, animated: true)
     }
-
-    
-    
+ 
     func didFinish() {
         //parentCoordinator?.childDidFinish(self)
     }

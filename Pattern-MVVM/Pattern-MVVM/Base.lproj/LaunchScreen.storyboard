@@ -16,17 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woopSicredi" translatesAutoresizingMaskIntoConstraints="NO" id="RR3-Ku-mck">
-                                <rect key="frame" x="0.0" y="326" width="414" height="244"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lauch" translatesAutoresizingMaskIntoConstraints="NO" id="RR3-Ku-mck">
+                                <rect key="frame" x="0.0" y="288" width="414" height="282"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.26165369150000001" green="0.90066260099999995" blue="0.43332308530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.26735633609999998" green="0.91803199049999995" blue="0.43062424659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RR3-Ku-mck" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KE7-nd-rQf"/>
-                            <constraint firstItem="RR3-Ku-mck" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="282" id="U4b-jR-zGp"/>
-                            <constraint firstItem="RR3-Ku-mck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vx5-GI-2ej"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RR3-Ku-mck" secondAttribute="bottom" constant="292" id="oKo-iQ-LRy"/>
+                            <constraint firstItem="RR3-Ku-mck" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3a5-nA-g2G"/>
+                            <constraint firstItem="RR3-Ku-mck" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-24" id="Pff-R4-mUB"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="woopSicredi" width="1200" height="635"/>
+        <image name="lauch" width="512" height="512"/>
     </resources>
 </document>

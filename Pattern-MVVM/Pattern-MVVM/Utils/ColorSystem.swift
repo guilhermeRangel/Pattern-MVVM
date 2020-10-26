@@ -16,9 +16,7 @@ class ColorSystem {
     static var defaultBackgroundColor: UIColor{
         return UIColor.init(named: "DefaultBackgroundColor") ?? .gray
     }
-   
-    
-   
+
     static var defaultElementeCell:UIColor {
         return UIColor(named: "DefaultElementeCell") ?? .gray
     }
