@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		645570B6F604CB88158F5D02 /* Pods_Pattern_MVVM_Pattern_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D701F20D6DD933BA2095A4A5 /* Pods_Pattern_MVVM_Pattern_MVVMUITests.framework */; };
+		77032F3F25466374001215E0 /* DetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77032F3E25466374001215E0 /* DetailsService.swift */; };
+		77032F47254666C9001215E0 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77032F46254666C9001215E0 /* CheckIn.swift */; };
+		77032F4C2546672A001215E0 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77032F4B2546672A001215E0 /* DetailsViewModel.swift */; };
 		775C4A192544DBC7005347BB /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775C4A182544DBC7005347BB /* DetailsCoordinator.swift */; };
 		7774E2B825463F1D00FEA2C5 /* ExternalMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774E2B725463F1D00FEA2C5 /* ExternalMaps.swift */; };
 		7774E2BD25463F9F00FEA2C5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774E2BC25463F9F00FEA2C5 /* Alerts.swift */; };
@@ -64,6 +67,9 @@
 		038CAEFF88F3461E6198AFB7 /* Pods-Pattern-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pattern-MVVM.release.xcconfig"; path = "Target Support Files/Pods-Pattern-MVVM/Pods-Pattern-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		0EBDAA47586E4846D29E6061 /* Pods_Pattern_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pattern_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3116A52CF781BD84DBAB8F7D /* Pods_Pattern_MVVMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pattern_MVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77032F3E25466374001215E0 /* DetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsService.swift; sourceTree = "<group>"; };
+		77032F46254666C9001215E0 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		77032F4B2546672A001215E0 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		775C4A182544DBC7005347BB /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
 		7774E2B725463F1D00FEA2C5 /* ExternalMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalMaps.swift; sourceTree = "<group>"; };
 		7774E2BC25463F9F00FEA2C5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -151,8 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				77B52EF02544E8FA00284E90 /* HomeViewController.swift */,
-				77B52EFA2544E98C00284E90 /* DetailsViewController.swift */,
 				77B52F04254503D800284E90 /* HomeViewModel.swift */,
+				77B52EFA2544E98C00284E90 /* DetailsViewController.swift */,
+				77032F4B2546672A001215E0 /* DetailsViewModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 			children = (
 				77F181A12544C60100E765EB /* Events.swift */,
 				77F1819C2544C54000E765EB /* People.swift */,
+				77032F46254666C9001215E0 /* CheckIn.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,8 +290,9 @@
 		77F181982544C37A00E765EB /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				77B52F0C2545053400284E90 /* HomeService.swift */,
 				77F181A62544C8B700E765EB /* EventService.swift */,
+				77B52F0C2545053400284E90 /* HomeService.swift */,
+				77032F3E25466374001215E0 /* DetailsService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -543,8 +552,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F181A72544C8B700E765EB /* EventService.swift in Sources */,
+				77032F47254666C9001215E0 /* CheckIn.swift in Sources */,
 				7774E2B825463F1D00FEA2C5 /* ExternalMaps.swift in Sources */,
 				77F181DD2544D59500E765EB /* MainCoordinator.swift in Sources */,
+				77032F4C2546672A001215E0 /* DetailsViewModel.swift in Sources */,
 				7774E2C72546418300FEA2C5 /* LocationService.swift in Sources */,
 				7774E2C22546415E00FEA2C5 /* CheckConnectivity.swift in Sources */,
 				77B52F4625460B8D00284E90 /* ColorSystem.swift in Sources */,
@@ -564,6 +575,7 @@
 				77B52F05254503D800284E90 /* HomeViewModel.swift in Sources */,
 				77F181F12544D60800E765EB /* Constants.swift in Sources */,
 				7774E2BD25463F9F00FEA2C5 /* Alerts.swift in Sources */,
+				77032F3F25466374001215E0 /* DetailsService.swift in Sources */,
 				77B52EFB2544E98C00284E90 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,7 +748,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TYNC5NT5U5;
 				INFOPLIST_FILE = "Pattern-MVVM/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -757,7 +769,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TYNC5NT5U5;
 				INFOPLIST_FILE = "Pattern-MVVM/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -32,11 +32,5 @@ class HomeService: HomeServiceProtocol {
             }
         }
     }
-    
-    let homeService: EventService<[Events]>
-    init(homeService: EventService<[Events]> = .allEvents) {
-        self.homeService = homeService
-    }
-    
 }
 

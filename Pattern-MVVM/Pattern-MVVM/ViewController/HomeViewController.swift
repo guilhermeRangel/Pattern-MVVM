@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var viewModel = HomeViewModel()
     var alert = Alerts()
+    //flag to when be not connected
     var repeats = true
     let heightScreen = UIScreen.main.bounds.height
     let widthScreen = UIScreen.main.bounds.width

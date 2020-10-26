@@ -32,7 +32,7 @@ class DetailsCoordinator: Coordinator {
         let vc = DetailsViewController.instantiate(Constants.Storyboard.detailsSB, id: Constants.Id.detailsId)
         vc.coordinator = parentCoordinator
         vc.viewModel = viewModel
-        vc.id = id
+        vc.idEventy = id
         navigationController.pushViewController(vc, animated: true)
     }
     
