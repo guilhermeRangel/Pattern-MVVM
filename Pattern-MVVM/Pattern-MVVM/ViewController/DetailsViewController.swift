@@ -34,7 +34,7 @@ class DetailsViewController: UIViewController, Storyboarded {
     var idEventy:Int?
     var latitudeDestiny: Double!
     var longitudeDestiny: Double!
-    
+    var flagCheckIn:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +43,14 @@ class DetailsViewController: UIViewController, Storyboarded {
         setupView(index: index)
         
         
-        let rightBarButton = UIBarButtonItem(title: "Compartir", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.shareItemTapped(_:)))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+       
         
     }
    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "Detalhes do Eventos"
+        navigationItem.title = "Detalhes do Eventos".localized
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
@@ -62,7 +61,7 @@ class DetailsViewController: UIViewController, Storyboarded {
             titleDetails.text = event.title
             bodyDetails.text = event.description
             imgDetails.kf.setImage(with: URL(string: event.image ?? ""))
-            price.text = "Preço\n\(event.price?.description ?? "0")"
+            price.text = "Preço\n\(event.price?.description ?? "0")".localized
             
             if let latitude = event.latitude, let longitude = event.longitude {
                 latitudeDestiny = latitude
@@ -84,16 +83,18 @@ class DetailsViewController: UIViewController, Storyboarded {
             }
             
         }
+        let rightBarButton = UIBarButtonItem(title: "Compartir".localized, style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.shareItemTapped(_:)))
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
     @IBAction func btnCheckIn(_ sender: UIButton) {
         if let id = idEventy {
-            checkInViewModel.checkInEvent(eventId: id.description, name: UIDevice.current.name, email: "guilherme.rangel@icoud.com")
+            let result = alerts.alertJoinEvent(eventId: id.description)
+            present(result, animated: true) {
+                self.checkInViewModel.checkInEvent(eventId: id.description, name: UIDevice.current.name, email: "guilherme.rangel@icoud.com")
+            }
+            
         }
-        
-        
-        
-        
     }
     
     @IBAction func btnNavigationNow(_ sender: UIButton) {
@@ -106,7 +107,14 @@ class DetailsViewController: UIViewController, Storyboarded {
 
 extension DetailsViewController: DetailsServiceDelegate{
     func checkIn(_ result: Bool) {
-        print("post funcionou")
+        if let count = Int(peoplesCount.text!) {
+            if !flagCheckIn{
+                peoplesCount.text = "+\(1+count)"
+                flagCheckIn = true
+            }
+           
+            
+        }
     }
     
     
@@ -129,7 +137,9 @@ extension DetailsViewController{
     
     
     @objc func shareItemTapped(_ sender:UIBarButtonItem!){
-        let vc = UIActivityViewController(activityItems: [""], applicationActivities: [])
-        present(vc, animated: true)
+       
+        let vc = UIActivityViewController(activityItems: ["\(self.idEventy ?? 0)-\(self.titleDetails.text ?? "evento sicredi")"], applicationActivities: [])
+        self.present(vc, animated: true)
+       
     }
 }

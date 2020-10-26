@@ -19,6 +19,19 @@ struct Alerts {
         return alert
     }
     
+    func alertJoinEvent(eventId: String) -> UIAlertController {
+        let alert = UIAlertController(title: "Fazer Check-In", message: "Você deseja fazer o check-in nesse evento?", preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "Não", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Sim", style: .default, handler: {_ in
+           //TODO - Save checkIn
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        return alert
+    }
+    
     func alertExternalMaps(latOrigin: Double, lngOrigin: Double, latDest: Double, lngDest: Double) -> UIAlertController {
         let actionSheetController = UIAlertController(title: "Escolha seu mapa de preferencia".localized, message: "", preferredStyle: UIAlertController.Style.actionSheet)
 
