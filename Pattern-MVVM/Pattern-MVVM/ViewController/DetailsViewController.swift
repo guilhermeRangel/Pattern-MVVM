@@ -25,6 +25,7 @@ class DetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var check4: UIImageView!
     
     @IBOutlet weak var peoplesCount: UILabel!
+    
     weak var coordinator: MainCoordinator?
     var viewModel:HomeViewModel?
     var checkInViewModel = DetailsViewModel()
@@ -41,24 +42,24 @@ class DetailsViewController: UIViewController, Storyboarded {
         checkInViewModel.checkInService.detailsServiceDelegate = self
         guard let index = idEventy else {return}
         setupView(index: index)
-  
+        
+        
+        btnCheckIn.layer.masksToBounds = true
+        btnCheckIn.setRadiusWithShadow()
+        btnCheckIn.backgroundColor = ColorSystem.backgroundCard
+        
+        
+        btnNavigationNow.layer.masksToBounds = true
+        btnNavigationNow.setRadiusWithShadow()
+        btnNavigationNow.backgroundColor = ColorSystem.backgroundCard
+        
     }
-    func showPeoplesChecked(){
-        check1.isHidden = true
-        check2.isHidden = true
-        check3.isHidden = true
-        check4.isHidden = true
-        peoplesCount.isHidden = true
-        viewParticipants.isHidden = true
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "Detalhes do Eventos".localized
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
-        self.navigationController?.navigationBar.tintColor = ColorSystem.defaultElementsColor
+        customizeNavigation()
+        
     }
     func setupView(index: Int){
         if let event = viewModel?.modelHomeEvents.result?[index]{
@@ -76,32 +77,40 @@ class DetailsViewController: UIViewController, Storyboarded {
                 let region = centerMapOnLocation(CLLocation(latitude: latitude, longitude: longitude))
                 if event.people!.count > 0{
                     if let p0 = event.people?[0].picture {
-                        check1.kf.setImage(with: URL(string: p0))
+                        if let url = URL(string: p0) {
+                            check1.kf.setImage(with: url)
+                        }
+                        
                     }
                     if let p1 = event.people?[1].picture{
-                        check2.kf.setImage(with: URL(string: p1))
+                        if let url = URL(string: p1) {
+                            check2.kf.setImage(with: url)
+                        }
                     }
                     if let p2 = event.people?[2].picture{
-                        check3.kf.setImage(with: URL(string: p2))
+                        if let url = URL(string: p2) {
+                            check3.kf.setImage(with: url)
+                        }
                     }
                     if let p3 = event.people?[3].picture{
-                        check4.kf.setImage(with: URL(string: p3))
+                        if let url = URL(string: p3) {
+                            check3.kf.setImage(with: url)
+                        }
                     }
-
+                    
                     if let count = event.people?.count.description{
                         peoplesCount.text = "+\(count)"
                     }
                 }else{
-                    showPeoplesChecked()
+                    showAndHidePeoplesChecked(option: true)
                 }
-               
+                
                 mapKit.addAnnotation(annotation)
                 mapKit.setRegion(region, animated: true)
             }
             
         }
-        let rightBarButton = UIBarButtonItem(title: "Compartir".localized, style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.shareItemTapped(_:)))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        
     }
     
     @IBAction func btnCheckIn(_ sender: UIButton) {
@@ -134,6 +143,29 @@ extension DetailsViewController: DetailsServiceDelegate{
 
 extension DetailsViewController{
     
+    func customizeNavigation(){
+        let rightBarButton = UIBarButtonItem(title: "Compartilhar".localized, style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.shareItemTapped(_:)))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        
+        navigationItem.title = "Detalhes do Eventos".localized
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.barTintColor = ColorSystem.defaultElementeCell
+        self.navigationController?.navigationBar.tintColor = ColorSystem.defaultElementsColor
+    }
+    
+    func showAndHidePeoplesChecked(option: Bool){
+        check1.isHidden = option
+        check2.isHidden = option
+        check3.isHidden = option
+        check4.isHidden = option
+        peoplesCount.isHidden = option
+        viewParticipants.isHidden = option
+    }
+    
+    
+    //MARK: - Maps
     func centerMapOnLocation(_ location: CLLocation) -> MKCoordinateRegion {
         let region = setCoordinateRegion(with: location.coordinate.latitude,
                                          longitude: location.coordinate.longitude)
@@ -151,6 +183,7 @@ extension DetailsViewController{
     @objc func shareItemTapped(_ sender:UIBarButtonItem!){
         let vc = UIActivityViewController(activityItems: ["\(self.idEventy ?? 0)-\(self.titleDetails.text ?? "evento sicredi")"], applicationActivities: [])
         self.present(vc, animated: true)
-       
+        
     }
 }
+
