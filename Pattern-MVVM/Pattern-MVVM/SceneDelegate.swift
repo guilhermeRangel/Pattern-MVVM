@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nvController = UINavigationController()
         
         coordinator = MainCoordinator(navigationController: nvController)
-
+        
         coordinator?.start()
         
         window = UIWindow(windowScene: scene)

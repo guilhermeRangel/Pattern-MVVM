@@ -21,14 +21,13 @@ class DetailsViewController: UIViewController, Storyboarded {
     var alerts = Alerts()
     var viewModel:HomeViewModel?
     var id:Int?
-    var latitudeDestino: Double?
-    var longitudeDestino: Double?
-    
+    var latitudeDestino: Double!
+    var longitudeDestino: Double!
+    var currentLocation = CoreLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let index = id else {return}
         setupView(index: index)
-        //mapKit.delegate = self
     }
  
     override func viewWillAppear(_ animated: Bool) {
@@ -66,13 +65,11 @@ class DetailsViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func btnNavigationNow(_ sender: UIButton) {
-       
-        
-        
+        if let coordinate = currentLocation.locationManager?.location?.coordinate{
+            let result = alerts.alertExternalMaps(latOrigin: coordinate.latitude, lngOrigin: coordinate.longitude, latDest: latitudeDestino, lngDest: longitudeDestino)
+            present(result, animated: true, completion: nil)
+        }
     }
-    
-    
-   
 }
 
 extension DetailsViewController{

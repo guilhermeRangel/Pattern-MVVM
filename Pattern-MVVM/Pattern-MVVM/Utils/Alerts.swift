@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+
 struct Alerts {
     var externalMaps = ExternalMaps()
     
     func alertOffline() -> UIAlertController {
-        let alert = UIAlertController(title: "Você esta Offline", message: "Parece que você está sem conexão no momento", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Você esta Offline", message: "Parece que você está sem conexão no momento, restabeleça a conexão e tente novamente", preferredStyle: .alert)
 
-        let okAction = UIAlertAction(title: "done".localized, style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Entendi".localized, style: .cancel, handler: nil)
         alert.addAction(okAction)
         return alert
     }
@@ -29,18 +30,18 @@ struct Alerts {
 
         actionSheetController.addAction(UIAlertAction(title: "Google Maps".localized, style: UIAlertAction.Style.default, handler: { (_) -> Void in
             self.externalMaps.googleMaps(latOrigin: latOrigin, lngOrigin: lngOrigin, latDest: latDest, lngDest: lngDest)
-            print("google")
+           
         }))
 
-        // Add Discard-Action
+        
         actionSheetController.addAction(UIAlertAction(title: "Waze Maps".localized, style: UIAlertAction.Style.default, handler: { (_) -> Void in
             self.externalMaps.wazeMaps(latOrigin: latOrigin, lngOrigin: lngOrigin, latDest: latDest, lngDest: lngDest)
-            print("waze")
+          
         }))
 
         actionSheetController.addAction(UIAlertAction(title: "Cacelar".localized, style: UIAlertAction.Style.cancel, handler: { (_) -> Void in
 
-            print("dismiss")
+    
         }))
         return actionSheetController
     }

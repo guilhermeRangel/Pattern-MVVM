@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 class CommomTableViewCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
-    
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var title: UILabel!
     override func awakeFromNib() {
@@ -32,6 +31,9 @@ class CommomTableViewCell: UITableViewCell {
         self.eventDate.text = datefinal
     }
     
+   
+    }
+    
     
   
-}
+
